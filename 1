@@ -1,0 +1,5 @@
+docker build -t file-management .
+docker run -v shared_volume:/shared_volume file-management
+
+docker rm -f $(docker ps -aq)
+for i in {1..10}; do docker run -v shared_volume:/shared_volume file_management ; done
